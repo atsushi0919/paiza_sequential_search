@@ -1,3 +1,42 @@
+INPUT1 = <<~"EOS"
+  5
+  -3 2 0 -1 2
+  9
+EOS
+OUTPUT1 = <<~"EOS"
+  2
+EOS
+
+def solve1(input_lines)
+  n, *ary, k = input_lines.split.map(&:to_i)
+
+  result = 0
+  0.upto(n - 1) do |i|
+    if ary[i] == k
+      result = i + 1
+      break
+    end
+  end
+  result
+end
+
+# puts solve1(STDIN.read)
+# puts solve1(INPUT1)
+# > 2
+
+def solve2(input_lines)
+  n, *ary, k = input_lines.split.map(&:to_i)
+  result = ary.index(k)
+  if result.nil?
+    return 0
+  end
+  result + 1
+end
+
+# puts solve2(STDIN.read)
+# puts solve2(INPUT1)
+# > 2
+
 =begin
 指定された値の位置 1 (paizaランク D 相当)
 問題にチャレンジして、ユーザー同士で解答を教え合ったり、コードを公開してみよう！
@@ -12,7 +51,8 @@ https://paiza.jp/works/mondai/sequence_search_problems/sequence_search_problems_
 
 ただし、数列に整数 k が含まれていない場合は、0 を出力してください。
 
-また、数列に整数 k が複数含まれている場合は、数列を先頭から順に見たときに最初に現れる k が数列の何番目にあるかを求めてください。
+また、数列に整数 k が複数含まれている場合は、
+数列を先頭から順に見たときに最初に現れる k が数列の何番目にあるかを求めてください。
 
 ▼　下記解答欄にコードを記入してみよう
 

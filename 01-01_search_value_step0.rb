@@ -10,12 +10,30 @@ OUTPUT1 = <<~"EOS"
   2
 EOS
 
-def solve(input_lines)
-  n, *a, k = input_lines.split.map(&:to_i)
-  [n, a, k]
+def solve1(input_lines)
+  n, *ary, k = input_lines.split.map(&:to_i)
+
+  result = 0
+  ary.each do |num|
+    if num == k
+      result += 1
+    end
+  end
+  result
 end
 
-p solve(INPUT1)
+puts solve1(STDIN.read)
+# puts solve1(INPUT1)
+# > 2
+
+def solve2(input_lines)
+  n, *ary, k = input_lines.split.map(&:to_i)
+  ary.count(k)
+end
+
+puts solve2(STDIN.read)
+# puts solve2(INPUT1)
+# > 2
 
 =begin
 指定された値の個数 (paizaランク D 相当)
