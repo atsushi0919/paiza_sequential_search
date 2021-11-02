@@ -1,3 +1,27 @@
+# 条件付き最小値 (paizaランク C 相当)
+# https://paiza.jp/works/mondai/sequence_search_problems/sequence_search_problems_search_condition_step2
+
+INPUT1 = <<~"EOS"
+  5
+  -5 11 3 -9 0
+  -4
+EOS
+OUTPUT1 = <<~"EOS"
+  0
+EOS
+
+def solve(input_lines)
+  n, *ary, k = input_lines.split.map(&:to_i)
+  
+  min_num = 1.0 / 0
+  ary.each do |num|
+    min_num = num if k <= num && num < min_num
+  end
+  min_num
+end
+
+puts solve(INPUT1)
+
 =begin
 条件付き最小値 (paizaランク C 相当)
 問題にチャレンジして、ユーザー同士で解答を教え合ったり、コードを公開してみよう！

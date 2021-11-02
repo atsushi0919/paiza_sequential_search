@@ -1,3 +1,39 @@
+# 成績優秀者の列挙 1 (paizaランク C 相当)
+# https://paiza.jp/works/mondai/sequence_search_problems/sequence_search_problems_search_condition_step6
+
+INPUT1 = <<~"EOS"
+  5
+  alice 97
+  bob 25
+  carol 57
+  dave 46
+  ellen 10
+  35
+EOS
+OUTPUT1 = <<~"EOS"
+  alice
+  carol
+  dave
+EOS
+
+def solve(input_lines)
+  input_lines = input_lines.split("\n")
+  n = input_lines.shift.to_i
+  ary = input_lines.shift(n).map do |l|
+    name, score = l.split
+    [name, score.to_i]
+  end
+  k = input_lines.shift.to_i
+
+  result = []
+  ary.each do |name, score|
+    result << name if k <= score
+  end
+  result
+end
+
+puts solve(INPUT1)
+
 =begin
 成績優秀者の列挙 1 (paizaランク C 相当)
 問題にチャレンジして、ユーザー同士で解答を教え合ったり、コードを公開してみよう！

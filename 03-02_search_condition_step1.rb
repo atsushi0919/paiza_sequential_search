@@ -1,3 +1,21 @@
+# 奇数の探索 (paizaランク D 相当)
+# https://paiza.jp/works/mondai/sequence_search_problems/sequence_search_problems_search_condition_step1
+
+INPUT1 = <<~"EOS"
+  5
+  1 3 5 6 8
+EOS
+OUTPUT1 = <<~"EOS"
+  3
+EOS
+
+def solve(input_lines)
+  n, *ary = input_lines.split.map(&:to_i)
+  n.downto(1).find { |i| ary[i - 1].odd? }
+end
+
+puts solve(INPUT1)
+
 =begin
 奇数の探索 (paizaランク D 相当)
 問題にチャレンジして、ユーザー同士で解答を教え合ったり、コードを公開してみよう！

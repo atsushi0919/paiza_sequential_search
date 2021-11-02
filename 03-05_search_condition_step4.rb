@@ -1,3 +1,31 @@
+# 点と点の距離 (paizaランク C 相当)
+# https://paiza.jp/works/mondai/sequence_search_problems/sequence_search_problems_search_condition_step4
+
+INPUT1 = <<~"EOS"
+  5
+  -9 5
+  0 4
+  2 -6
+  7 -4
+  -3 -1
+  10
+EOS
+OUTPUT1 = <<~"EOS"
+  3
+EOS
+
+def solve(input_lines)
+  input_lines = input_lines.split("\n")
+  n = input_lines.shift.to_i
+  ary = input_lines.shift(n).map { |l| l.split.map(&:to_i) }
+  k = input_lines.shift.to_i
+
+  a = ary.last
+  ary.count { |b| (a[0] - b[0]).abs + (a[1] - b[1]).abs <= k }
+end
+
+puts solve(INPUT1)
+
 =begin
 点と点の距離 (paizaランク C 相当)
 問題にチャレンジして、ユーザー同士で解答を教え合ったり、コードを公開してみよう！
@@ -10,7 +38,8 @@ https://paiza.jp/works/mondai/sequence_search_problems/sequence_search_problems_
 
 n 個の点 (点 n 含む) のうち、点 n とのマンハッタン距離が k 以下であるような点の数を求めてください。
 
-なお、この問題において、2点間のマンハッタン距離とは、2点の各座標の差の絶対値の総和を指します。つまり、点 (x_i, y_i) と点 (x_j, y_j) のマンハッタン距離は、| x_i - x_j | + | y_i - y_j | です。
+なお、この問題において、2点間のマンハッタン距離とは、2点の各座標の差の絶対値の総和を指します。
+つまり、点 (x_i, y_i) と点 (x_j, y_j) のマンハッタン距離は、| x_i - x_j | + | y_i - y_j | です。
 
 ▼　下記解答欄にコードを記入してみよう
 

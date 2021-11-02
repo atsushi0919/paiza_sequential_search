@@ -1,3 +1,27 @@
+# 条件付き最大値 (paizaランク C 相当)
+# https://paiza.jp/works/mondai/sequence_search_problems/sequence_search_problems_search_condition_step3
+
+INPUT1 = <<~"EOS"
+  5
+  -5 11 3 -9 0
+  -4
+EOS
+OUTPUT1 = <<~"EOS"
+  -5
+EOS
+
+def solve(input_lines)
+  n, *ary, k = input_lines.split.map(&:to_i)
+
+  max_num = -1.0 / 0
+  ary.each do |num|
+    max_num = num if max_num < num && num <= k
+  end
+  max_num
+end
+
+puts solve(INPUT1)
+
 =begin
 条件付き最大値 (paizaランク C 相当)
 問題にチャレンジして、ユーザー同士で解答を教え合ったり、コードを公開してみよう！

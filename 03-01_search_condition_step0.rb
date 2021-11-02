@@ -1,3 +1,21 @@
+# 偶数の探索 (paizaランク D 相当)
+# https://paiza.jp/works/mondai/sequence_search_problems/sequence_search_problems_search_condition_step0
+
+INPUT1 = <<~"EOS"
+  5
+  1 3 5 6 8
+EOS
+OUTPUT1 = <<~"EOS"
+  4
+EOS
+
+def solve(input_lines)
+  n, *ary = input_lines.split.map(&:to_i)
+  1.upto(n).find { |i| ary[i - 1].even? }
+end
+
+puts solve(INPUT1)
+
 =begin
 偶数の探索 (paizaランク D 相当)
 問題にチャレンジして、ユーザー同士で解答を教え合ったり、コードを公開してみよう！

@@ -1,3 +1,35 @@
+# 長方形に含まれる点 (paizaランク C 相当)
+# https://paiza.jp/works/mondai/sequence_search_problems/sequence_search_problems_search_condition_step5
+
+INPUT1 = <<~"EOS"
+  5
+  -9 5
+  0 4
+  2 -6
+  7 -4
+  -3 -1
+  -5 5
+  -5 5
+EOS
+OUTPUT1 = <<~"EOS"
+  2
+EOS
+
+def solve(input_lines)
+  input_lines = input_lines.split("\n")
+  n = input_lines.shift.to_i
+  ary = input_lines.shift(n).map { |l| l.split.map(&:to_i) }
+  x = input_lines.shift.split.map(&:to_i)
+  y = input_lines.shift.split.map(&:to_i)
+
+  ary.count do |q|
+    x[0] <= q[0] && q[0] <= x[1] &&
+    y[0] <= q[1] && q[1] <= y[1]
+  end
+end
+
+p solve(INPUT1)
+
 =begin
 長方形に含まれる点 (paizaランク C 相当)
 問題にチャレンジして、ユーザー同士で解答を教え合ったり、コードを公開してみよう！
