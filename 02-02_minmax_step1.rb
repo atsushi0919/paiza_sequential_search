@@ -1,3 +1,6 @@
+# 10変数の最大最小 (paizaランク D 相当)
+# https://paiza.jp/works/mondai/sequence_search_problems/sequence_search_problems_minmax_step1
+
 =begin
 10変数の最大最小 (paizaランク D 相当)
 問題にチャレンジして、ユーザー同士で解答を教え合ったり、コードを公開してみよう！
