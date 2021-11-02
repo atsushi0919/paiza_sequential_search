@@ -1,6 +1,44 @@
 # 【最大最小】n 変数の最大最小 (paizaランク C 相当)
 # https://paiza.jp/works/mondai/sequence_search_problems/sequence_search_problems_minmax_boss
 
+INPUT1 = <<~"EOS"
+  5
+  10 -19 14 8 -90
+EOS
+OUTPUT1 = <<~"EOS"
+  14 -90
+EOS
+
+def solve1(input_lines)
+  n, *ary = input_lines.split.map(&:to_i)
+
+  max_val = -Float::INFINITY
+  min_val = Float::INFINITY
+  ary.each do |val|
+    if max_val < val
+      max_val = val
+    end
+    if min_val > val
+      min_val = val
+    end
+  end
+  [max_val, min_val].join(" ")
+end
+
+# puts solve1(STDIN.read)
+# puts solve1(INPUT1)
+# 14 -90
+
+def solve2(input_lines)
+  ary = input_lines.split.map(&:to_i)
+
+  ary.minmax.reverse.join(" ")
+end
+
+# puts solve2(STDIN.read)
+# puts solve2(INPUT1)
+# 14 -90
+
 =begin
 【最大最小】n 変数の最大最小 (paizaランク C 相当)
 問題にチャレンジして、ユーザー同士で解答を教え合ったり、コードを公開してみよう！

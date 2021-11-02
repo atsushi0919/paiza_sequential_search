@@ -1,7 +1,25 @@
 # 2変数の最大最小 (paizaランク D 相当)
 # https://paiza.jp/works/mondai/sequence_search_problems/sequence_search_problems_minmax_step0
 
+INPUT1 = <<~"EOS"
+  -11 10
+EOS
+OUTPUT1 = <<~"EOS"
+  10 -11
+EOS
 
+def solve(input_lines)
+  ary = input_lines.split.map(&:to_i)
+
+  if ary[0] < ary[1]
+    ary.reverse!
+  end
+  ary.join(" ")
+end
+
+puts solve(STDIN.read)
+# puts solve(INPUT1)
+# 10 -11
 
 =begin
 2変数の最大最小 (paizaランク D 相当)

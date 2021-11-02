@@ -1,6 +1,43 @@
 # 10変数の最大最小 (paizaランク D 相当)
 # https://paiza.jp/works/mondai/sequence_search_problems/sequence_search_problems_minmax_step1
 
+INPUT1 = <<~"EOS"
+  -11 10 0 9 6 -10 5 3 2 -8
+EOS
+OUTPUT1 = <<~"EOS"
+  10 -11
+EOS
+
+def solve1(input_lines)
+  ary = input_lines.split.map(&:to_i)
+
+  max_val = -Float::INFINITY
+  min_val = Float::INFINITY
+  ary.each do |val|
+    if max_val < val
+      max_val = val
+    end
+    if min_val > val
+      min_val = val
+    end
+  end
+  [max_val, min_val].join(" ")
+end
+
+# puts solve1(STDIN.read)
+# puts solve1(INPUT1)
+# 10 -11
+
+def solve2(input_lines)
+  ary = input_lines.split.map(&:to_i)
+
+  ary.minmax.reverse.join(" ")
+end
+
+# puts solve2(STDIN.read)
+# puts solve2(INPUT1)
+# 10 -11
+
 =begin
 10変数の最大最小 (paizaランク D 相当)
 問題にチャレンジして、ユーザー同士で解答を教え合ったり、コードを公開してみよう！
