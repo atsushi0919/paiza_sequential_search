@@ -1,3 +1,42 @@
+INPUT1 = <<~"EOS"
+  5
+  -3 2 0 -1 2
+  2
+EOS
+OUTPUT1 = <<~"EOS"
+  5
+EOS
+
+def solve1(input_lines)
+  n, *ary, k = input_lines.split.map(&:to_i)
+
+  result = 0
+  (n - 1).downto(0) do |i|
+    if ary[i] == k
+      result = i + 1
+      break
+    end
+  end
+  result
+end
+
+# puts solve1(STDIN.read)
+# puts solve1(INPUT1)
+# > 5
+
+def solve2(input_lines)
+  n, *ary, k = input_lines.split.map(&:to_i)
+  result = ary.rindex(k)
+  if result.nil?
+    return 0
+  end
+  result + 1
+end
+
+# puts solve2(STDIN.read)
+puts solve2(INPUT1)
+# > 5
+
 =begin
 指定された値の位置 2 (paizaランク D 相当)
 問題にチャレンジして、ユーザー同士で解答を教え合ったり、コードを公開してみよう！
