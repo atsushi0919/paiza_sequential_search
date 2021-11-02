@@ -15,12 +15,8 @@ def solve1(input_lines)
   max_val = -Float::INFINITY
   min_val = Float::INFINITY
   ary.each do |val|
-    if max_val < val
-      max_val = val
-    end
-    if min_val > val
-      min_val = val
-    end
+    max_val = val if max_val < val
+    min_val = val if min_val > val
   end
   [max_val, min_val].join(" ")
 end
@@ -29,14 +25,19 @@ end
 # puts solve1(INPUT1)
 # 14 -90
 
+INPUT2 = <<"EOS"
+  1
+  -608539462
+EOS
+
 def solve2(input_lines)
-  ary = input_lines.split.map(&:to_i)
+  n, *ary = input_lines.split.map(&:to_i)
 
   ary.minmax.reverse.join(" ")
 end
 
 # puts solve2(STDIN.read)
-# puts solve2(INPUT1)
+puts solve2(INPUT2)
 # 14 -90
 
 =begin
