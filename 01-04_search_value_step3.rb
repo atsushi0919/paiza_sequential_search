@@ -1,3 +1,44 @@
+# 【指定された値の探索】指定された値の位置 3 (paizaランク D 相当)
+# https://paiza.jp/works/mondai/sequence_search_problems/sequence_search_problems_search_value_boss
+
+INPUT1 = <<~"EOS"
+  5
+  -3 2 0 -1 2
+  2
+EOS
+OUTPUT1 = <<~"EOS"
+  2
+  5
+EOS
+
+def solve1(input_lines)
+  n, *ary, k = input_lines.split.map(&:to_i)
+
+  result = []
+  1.upto(n) do |i|
+    if ary[i - 1] == k
+      result << i
+    end
+  end
+  result
+end
+
+# puts solve1(STDIN.read)
+# puts solve1(INPUT1)
+# > 2
+# > 5
+
+def solve2(input_lines)
+  n, *ary, k = input_lines.split.map(&:to_i)
+
+  1.upto(n).select { |i| ary[i - 1] == k }
+end
+
+# puts solve2(STDIN.read)
+p solve2(INPUT1)
+# > 2
+# > 5
+
 =begin
 【指定された値の探索】指定された値の位置 3 (paizaランク D 相当)
 問題にチャレンジして、ユーザー同士で解答を教え合ったり、コードを公開してみよう！

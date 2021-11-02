@@ -11,9 +11,9 @@ def solve1(input_lines)
   n, *ary, k = input_lines.split.map(&:to_i)
 
   result = 0
-  (n - 1).downto(0) do |i|
-    if ary[i] == k
-      result = i + 1
+  n.downto(1) do |i|
+    if ary[i - 1] == k
+      result = i
       break
     end
   end
