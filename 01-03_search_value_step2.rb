@@ -1,3 +1,6 @@
+# 指定された値の位置 2 (paizaランク D 相当)
+# https://paiza.jp/works/mondai/sequence_search_problems/sequence_search_problems_search_value_step2
+
 INPUT1 = <<~"EOS"
   5
   -3 2 0 -1 2
