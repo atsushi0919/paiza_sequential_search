@@ -23,21 +23,21 @@ def solve1(input_lines)
   result
 end
 
-# puts solve1(STDIN.read)
+#puts solve1(STDIN.read)
+
 # puts solve1(INPUT1)
 # > 5
 
 def solve2(input_lines)
   n, *ary, k = input_lines.split.map(&:to_i)
+
   result = ary.rindex(k)
-  if result.nil?
-    return 0
-  end
-  result + 1
+  result.nil? ? 0 : result + 1
 end
 
-# puts solve2(STDIN.read)
-puts solve2(INPUT1)
+puts solve2(STDIN.read)
+
+# puts solve2(INPUT1)
 # > 5
 
 =begin

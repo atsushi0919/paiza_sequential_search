@@ -10,17 +10,29 @@ OUTPUT1 = <<~"EOS"
   0
 EOS
 
-def solve(input_lines)
+def solve1(input_lines)
   n, *ary, k = input_lines.split.map(&:to_i)
-  
-  min_num = 1.0 / 0
-  ary.each do |num|
-    min_num = num if k <= num && num < min_num
+
+  min_val = Float::INFINITY
+  ary.each do |val|
+    min_val = val if k <= val && val < min_val
   end
-  min_num
+  min_val
 end
 
-puts solve(INPUT1)
+# puts solve1(STDIN.read)
+# puts solve1(INPUT1)
+# > 0
+
+def solve2(input_lines)
+  n, *ary, k = input_lines.split.map(&:to_i)
+
+  ary.select { |val| val >= k }.min
+end
+
+# puts solve2(STDIN.read)
+# puts solve2(INPUT1)
+# > 0
 
 =begin
 条件付き最小値 (paizaランク C 相当)

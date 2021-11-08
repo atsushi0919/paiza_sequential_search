@@ -9,12 +9,26 @@ OUTPUT1 = <<~"EOS"
   3
 EOS
 
-def solve(input_lines)
+def solve1(input_lines)
+  n, *ary = input_lines.split.map(&:to_i)
+
+  n.downto(1) do |i|
+    return i if ary[i - 1] % 2 != 0
+  end
+end
+
+# puts solve1(STDIN.read)
+# puts solve1(INPUT1)
+# > 3
+
+def solve2(input_lines)
   n, *ary = input_lines.split.map(&:to_i)
   n.downto(1).find { |i| ary[i - 1].odd? }
 end
 
-puts solve(INPUT1)
+# puts solve2(STDIN.read)
+# puts solve2(INPUT1)
+# > 3
 
 =begin
 奇数の探索 (paizaランク D 相当)

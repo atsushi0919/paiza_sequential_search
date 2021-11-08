@@ -16,7 +16,7 @@ OUTPUT1 = <<~"EOS"
   dave
 EOS
 
-def solve(input_lines)
+def solve1(input_lines)
   input_lines = input_lines.split("\n")
   n = input_lines.shift.to_i
   ary = input_lines.shift(n).map do |l|
@@ -32,7 +32,30 @@ def solve(input_lines)
   result
 end
 
-puts solve(INPUT1)
+# puts solve1(STDIN.read)
+# puts solve1(INPUT1)
+# > alice
+# > carol
+# > dave
+
+def solve2(input_lines)
+  input_lines = input_lines.split("\n")
+  n = input_lines.shift.to_i
+  hash = input_lines.shift(n).map do |l|
+    name, score = l.split
+    [name, score.to_i]
+  end
+  hash = hash.to_h
+  k = input_lines.shift.to_i
+
+  hash.select { |name, score| k <= score }.keys
+end
+
+# puts solve2(STDIN.read)
+#puts solve2(INPUT1)
+# > alice
+# > carol
+# > dave
 
 =begin
 成績優秀者の列挙 1 (paizaランク C 相当)

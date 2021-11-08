@@ -15,8 +15,8 @@ def solve1(input_lines)
   max_val = -Float::INFINITY
   min_val = Float::INFINITY
   ary.each do |val|
-    max_val = val if max_val < val
-    min_val = val if min_val > val
+    max_val = val if val > max_val
+    min_val = val if val < min_val
   end
   [max_val, min_val].join(" ")
 end

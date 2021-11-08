@@ -8,17 +8,27 @@ OUTPUT1 = <<~"EOS"
   10 -11
 EOS
 
-def solve(input_lines)
+def solve1(input_lines)
   ary = input_lines.split.map(&:to_i)
 
   if ary[0] < ary[1]
-    ary.reverse!
+    ary[0], ary[1] = ary[1], ary[0]
   end
   ary.join(" ")
 end
 
-puts solve(STDIN.read)
-# puts solve(INPUT1)
+# puts solve1(STDIN.read)
+# puts solve1(INPUT1)
+# 10 -11
+
+def solve2(input_lines)
+  ary = input_lines.split.map(&:to_i)
+
+  ary.minmax.reverse.join(" ")
+end
+
+# puts solve2(STDIN.read)
+puts solve2(INPUT1)
 # 10 -11
 
 =begin

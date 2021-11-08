@@ -15,20 +15,43 @@ OUTPUT1 = <<~"EOS"
   2
 EOS
 
-def solve(input_lines)
+def solve1(input_lines)
   input_lines = input_lines.split("\n")
   n = input_lines.shift.to_i
   ary = input_lines.shift(n).map { |l| l.split.map(&:to_i) }
   x = input_lines.shift.split.map(&:to_i)
   y = input_lines.shift.split.map(&:to_i)
 
-  ary.count do |q|
-    x[0] <= q[0] && q[0] <= x[1] &&
-    y[0] <= q[1] && q[1] <= y[1]
+  result = 0
+  ary.each do |q|
+    if x[0] <= q[0] && q[0] <= x[1] &&
+       y[0] <= q[1] && q[1] <= y[1]
+      result += 1
+    end
+  end
+  result
+end
+
+# puts solve1(STDIN.read)
+# puts solve1(INPUT1)
+# > 2
+
+def solve2(input_lines)
+  input_lines = input_lines.split("\n")
+  n = input_lines.shift.to_i
+  ary = input_lines.shift(n).map { |l| l.split.map(&:to_i) }
+  x = input_lines.shift.split.map(&:to_i)
+  y = input_lines.shift.split.map(&:to_i)
+
+  ary.count do |a|
+    x[0] <= a[0] && a[0] <= x[1] &&
+    y[0] <= a[1] && a[1] <= y[1]
   end
 end
 
-p solve(INPUT1)
+# puts solve2(STDIN.read)
+# puts solve2(INPUT1)
+# > 2
 
 =begin
 長方形に含まれる点 (paizaランク C 相当)

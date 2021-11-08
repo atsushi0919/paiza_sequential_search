@@ -22,16 +22,32 @@ def solve(input_lines)
     name, score = l.split
     [name, score.to_i]
   end
-  k = input_lines.shift.split.map(&:to_i)
+  k, l = input_lines.shift.split.map(&:to_i)
 
   result = []
   ary.each do |name, score|
-    result << name if k[0] <= score && score <= k[1]
+    result << name if k <= score && score <= l
   end
   result
 end
 
 puts solve(INPUT1)
+
+def solve2(input_lines)
+  input_lines = input_lines.split("\n")
+  n = input_lines.shift.to_i
+  hash = input_lines.shift(n).map do |l|
+    name, score = l.split
+    [name, score.to_i]
+  end
+  hash = hash.to_h
+  k, l = input_lines.shift.split.map(&:to_i)
+
+  hash.select { |name, score| k <= score && score <= l }.keys
+end
+
+# puts solve2(STDIN.read)
+puts solve2(INPUT1)
 
 =begin
 【特殊な探索】 成績優秀者の列挙 2 (paizaランク C 相当)

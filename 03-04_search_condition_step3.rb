@@ -10,17 +10,29 @@ OUTPUT1 = <<~"EOS"
   -5
 EOS
 
-def solve(input_lines)
+def solve1(input_lines)
   n, *ary, k = input_lines.split.map(&:to_i)
 
-  max_num = -1.0 / 0
-  ary.each do |num|
-    max_num = num if max_num < num && num <= k
+  max_val = -Float::INFINITY
+  ary.each do |val|
+    max_val = val if max_val < val && val <= k
   end
-  max_num
+  max_val
 end
 
-puts solve(INPUT1)
+# puts solve1(STDIN.read)
+# puts solve1(INPUT1)
+# > -5
+
+def solve2(input_lines)
+  n, *ary, k = input_lines.split.map(&:to_i)
+
+  ary.select { |val| val <= k }.max
+end
+
+# puts solve2(STDIN.read)
+# puts solve2(INPUT1)
+# > 0
 
 =begin
 条件付き最大値 (paizaランク C 相当)

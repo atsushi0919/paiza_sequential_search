@@ -14,17 +14,38 @@ OUTPUT1 = <<~"EOS"
   3
 EOS
 
-def solve(input_lines)
+def solve1(input_lines)
   input_lines = input_lines.split("\n")
   n = input_lines.shift.to_i
   ary = input_lines.shift(n).map { |l| l.split.map(&:to_i) }
   k = input_lines.shift.to_i
 
-  a = ary.last
+  a = ary[n - 1]
+  result = 0
+  ary.each do |b|
+    dist = (a[0] - b[0]).abs + (a[1] - b[1]).abs
+    result += 1 if dist <= k
+  end
+  result
+end
+
+# puts solve1(STDIN.read)
+puts solve1(INPUT1)
+# > 3
+
+def solve2(input_lines)
+  input_lines = input_lines.split("\n")
+  n = input_lines.shift.to_i
+  ary = input_lines.shift(n).map { |l| l.split.map(&:to_i) }
+  k = input_lines.shift.to_i
+
+  a = ary[n - 1]
   ary.count { |b| (a[0] - b[0]).abs + (a[1] - b[1]).abs <= k }
 end
 
-puts solve(INPUT1)
+# puts solve2(STDIN.read)
+puts solve2(INPUT1)
+# > 3
 
 =begin
 点と点の距離 (paizaランク C 相当)
