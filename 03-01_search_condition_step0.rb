@@ -23,6 +23,7 @@ end
 
 def solve2(input_lines)
   n, *ary = input_lines.split.map(&:to_i)
+  
   1.upto(n).find { |i| ary[i - 1].even? }
 end
 

@@ -17,6 +17,7 @@ def solve1(input_lines)
   ary.each do |val|
     min_val = val if k <= val && val < min_val
   end
+  
   min_val
 end
 

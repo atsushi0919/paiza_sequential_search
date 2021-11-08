@@ -26,6 +26,7 @@ def solve1(input_lines)
     dist = (a[0] - b[0]).abs + (a[1] - b[1]).abs
     result += 1 if dist <= k
   end
+  
   result
 end
 

@@ -28,6 +28,7 @@ def solve(input_lines)
   ary.each do |name, score|
     result << name if k <= score && score <= l
   end
+  
   result
 end
 

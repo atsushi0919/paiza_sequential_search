@@ -29,6 +29,7 @@ def solve1(input_lines)
       result += 1
     end
   end
+  
   result
 end
 

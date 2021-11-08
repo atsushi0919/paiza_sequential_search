@@ -17,6 +17,7 @@ def solve1(input_lines)
   ary.each do |val|
     max_val = val if max_val < val && val <= k
   end
+  
   max_val
 end
 
