@@ -29,12 +29,12 @@ def solve1(input_lines)
       result += 1
     end
   end
-  
+
   result
 end
 
 # puts solve1(STDIN.read)
-# puts solve1(INPUT1)
+puts solve1(INPUT1)
 # > 2
 
 def solve2(input_lines)
@@ -51,7 +51,7 @@ def solve2(input_lines)
 end
 
 # puts solve2(STDIN.read)
-# puts solve2(INPUT1)
+puts solve2(INPUT1)
 # > 2
 
 =begin

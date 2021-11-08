@@ -17,12 +17,12 @@ def solve1(input_lines)
   ary.each do |val|
     max_val = val if max_val < val && val <= k
   end
-  
+
   max_val
 end
 
 # puts solve1(STDIN.read)
-# puts solve1(INPUT1)
+puts solve1(INPUT1)
 # > -5
 
 def solve2(input_lines)
@@ -32,8 +32,8 @@ def solve2(input_lines)
 end
 
 # puts solve2(STDIN.read)
-# puts solve2(INPUT1)
-# > 0
+puts solve2(INPUT1)
+# > -5
 
 =begin
 条件付き最大値 (paizaランク C 相当)

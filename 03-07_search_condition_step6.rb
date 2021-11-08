@@ -29,12 +29,12 @@ def solve1(input_lines)
   ary.each do |name, score|
     result << name if k <= score
   end
-  
+
   result
 end
 
 # puts solve1(STDIN.read)
-# puts solve1(INPUT1)
+puts solve1(INPUT1)
 # > alice
 # > carol
 # > dave
@@ -53,7 +53,7 @@ def solve2(input_lines)
 end
 
 # puts solve2(STDIN.read)
-#puts solve2(INPUT1)
+puts solve2(INPUT1)
 # > alice
 # > carol
 # > dave

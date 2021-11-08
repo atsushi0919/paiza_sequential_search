@@ -17,12 +17,12 @@ def solve1(input_lines)
   ary.each do |val|
     min_val = val if k <= val && val < min_val
   end
-  
+
   min_val
 end
 
 # puts solve1(STDIN.read)
-# puts solve1(INPUT1)
+puts solve1(INPUT1)
 # > 0
 
 def solve2(input_lines)
@@ -32,7 +32,7 @@ def solve2(input_lines)
 end
 
 # puts solve2(STDIN.read)
-# puts solve2(INPUT1)
+puts solve2(INPUT1)
 # > 0
 
 =begin
