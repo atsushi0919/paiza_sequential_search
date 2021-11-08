@@ -17,6 +17,7 @@ def solve1(input_lines)
     max_val = val if max_val < val
     min_val = val if min_val > val
   end
+  
   [max_val, min_val].join(" ")
 end
 

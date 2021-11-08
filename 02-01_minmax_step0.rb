@@ -14,6 +14,7 @@ def solve1(input_lines)
   if ary[0] < ary[1]
     ary[0], ary[1] = ary[1], ary[0]
   end
+  
   ary.join(" ")
 end
 
@@ -27,8 +28,8 @@ def solve2(input_lines)
   ary.minmax.reverse.join(" ")
 end
 
-# puts solve2(STDIN.read)
-puts solve2(INPUT1)
+puts solve2(STDIN.read)
+# puts solve2(INPUT1)
 # 10 -11
 
 =begin

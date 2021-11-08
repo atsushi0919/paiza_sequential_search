@@ -9,7 +9,24 @@ OUTPUT1 = <<~"EOS"
   14 -90
 EOS
 
-def solve1(input_lines)
+def solve(input_lines)
+  # 入力受け取り
+  n, *ary = input_lines.split.map(&:to_i)
+
+  max_val = -Float::INFINITY
+  min_val = Float::INFINITY
+  ary.each do |val|
+    max_val = val if val > max_val
+    min_val = val if val < min_val
+  end
+
+  # 最大値・最小値を半角スペースで連結して末尾に改行を追加
+  [max_val, min_val].join(" ") << "\n"
+end
+
+# puts solve(STDIN.read)
+
+def solve(input_lines)
   n, *ary = input_lines.split.map(&:to_i)
 
   max_val = -Float::INFINITY
@@ -21,23 +38,18 @@ def solve1(input_lines)
   [max_val, min_val].join(" ")
 end
 
-# puts solve1(STDIN.read)
-# puts solve1(INPUT1)
+# puts solve(STDIN.read)
+# puts solve(INPUT1)
 # 14 -90
 
-INPUT2 = <<"EOS"
-  1
-  -608539462
-EOS
-
-def solve2(input_lines)
+def solve(input_lines)
   n, *ary = input_lines.split.map(&:to_i)
 
   ary.minmax.reverse.join(" ")
 end
 
-# puts solve2(STDIN.read)
-puts solve2(INPUT2)
+puts solve(STDIN.read)
+# puts solve2(INPUT2)
 # 14 -90
 
 =begin
