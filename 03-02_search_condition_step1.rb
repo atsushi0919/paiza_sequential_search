@@ -17,8 +17,8 @@ def solve1(input_lines)
   end
 end
 
-# puts solve1(STDIN.read)
-puts solve1(INPUT1)
+puts solve1(STDIN.read)
+# puts solve1(INPUT1)
 # > 3
 
 def solve2(input_lines)
@@ -27,8 +27,8 @@ def solve2(input_lines)
   n.downto(1).find { |i| ary[i - 1].odd? }
 end
 
-# puts solve2(STDIN.read)
-puts solve2(INPUT1)
+puts solve2(STDIN.read)
+# puts solve2(INPUT1)
 # > 3
 
 =begin

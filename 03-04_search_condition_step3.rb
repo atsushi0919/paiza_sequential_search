@@ -15,14 +15,14 @@ def solve1(input_lines)
 
   max_val = -Float::INFINITY
   ary.each do |val|
-    max_val = val if max_val < val && val <= k
+    max_val = val if val <= k && val > max_val
   end
 
   max_val
 end
 
-# puts solve1(STDIN.read)
-puts solve1(INPUT1)
+puts solve1(STDIN.read)
+# puts solve1(INPUT1)
 # > -5
 
 def solve2(input_lines)
@@ -31,8 +31,8 @@ def solve2(input_lines)
   ary.select { |val| val <= k }.max
 end
 
-# puts solve2(STDIN.read)
-puts solve2(INPUT1)
+puts solve2(STDIN.read)
+# puts solve2(INPUT1)
 # > -5
 
 =begin
