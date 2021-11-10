@@ -12,22 +12,38 @@ EOS
 
 def solve1(input_lines)
   n, *ary, k = input_lines.split.map(&:to_i)
-  
-  ary.sort[-2]
+
+  k.times do |i|
+    0.upto(n - 2 - i) do |j|
+      if ary[j] > ary[j + 1]
+        ary[j], ary[j + 1] = ary[j + 1], ary[j]
+      end
+    end
+  end
+
+  ary[-k]
 end
 
-puts solve2(INPUT1)
+p solve1(INPUT1)
 
 def solve2(input_lines)
   n, *ary, k = input_lines.split.map(&:to_i)
-  
-  ary.max(k).last
+
+  ary.sort[-k]
 end
 
 puts solve2(INPUT1)
 
+def solve3(input_lines)
+  n, *ary, k = input_lines.split.map(&:to_i)
+
+  ary.max(k).last
+end
+
+puts solve3(INPUT1)
+
 =begin
-第 k 要素の探索】k番目に大きな値 (paizaランク C 相当)
+【第 k 要素の探索】k番目に大きな値 (paizaランク C 相当)
 問題にチャレンジして、ユーザー同士で解答を教え合ったり、コードを公開してみよう！
 
 シェア用URL:
