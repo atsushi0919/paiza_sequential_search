@@ -10,6 +10,14 @@ OUTPUT1 = <<~"EOS"
   -3
 EOS
 
+# 確認用コード
+p INPUT1
+# > "5\n-9 10 6 0 -3\n4\n"
+p OUTPUT1
+# > "-3\n"
+
+exit
+
 def solve1(input_lines)
   n, *ary, k = input_lines.split.map(&:to_i)
 
