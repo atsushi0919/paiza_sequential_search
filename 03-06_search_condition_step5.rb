@@ -19,13 +19,13 @@ def solve1(input_lines)
   input_lines = input_lines.split("\n")
   n = input_lines.shift.to_i
   ary = input_lines.shift(n).map { |l| l.split.map(&:to_i) }
-  x = input_lines.shift.split.map(&:to_i)
-  y = input_lines.shift.split.map(&:to_i)
+  xs, xt = input_lines.shift.split.map(&:to_i)
+  ys, yt = input_lines.shift.split.map(&:to_i)
 
   result = 0
-  ary.each do |q|
-    if x[0] <= q[0] && q[0] <= x[1] &&
-       y[0] <= q[1] && q[1] <= y[1]
+  ary.each do |x, y|
+    if xs <= x && x <= xt &&
+       ys <= y && y <= yt
       result += 1
     end
   end
@@ -41,12 +41,12 @@ def solve2(input_lines)
   input_lines = input_lines.split("\n")
   n = input_lines.shift.to_i
   ary = input_lines.shift(n).map { |l| l.split.map(&:to_i) }
-  x = input_lines.shift.split.map(&:to_i)
-  y = input_lines.shift.split.map(&:to_i)
+  xs, xt = input_lines.shift.split.map(&:to_i)
+  ys, yt = input_lines.shift.split.map(&:to_i)
 
-  ary.count do |a|
-    x[0] <= a[0] && a[0] <= x[1] &&
-    y[0] <= a[1] && a[1] <= y[1]
+  ary.count do |x, y|
+    xs <= x && x <= xt &&
+    ys <= y && y <= yt
   end
 end
 
@@ -64,7 +64,8 @@ https://paiza.jp/works/mondai/sequence_search_problems/sequence_search_problems_
  下記の問題をプログラミングしてみよう！
 整数 n と、二次元平面上の点 1 ~ n の座標 (x_1, y_1), ... , (x_n, y_n), 整数 x_s, x_t, y_s, y_t が与えられます。
 
-n 個の点のうち、(x_s, y_s), (x_s, y_t), (x_t, y_t), (x_t, y_s) の4頂点からなる長方形の内部に含まれている点の数を求めてください。なお、長方形の辺上にある点は長方形に含まれているものとします。
+n 個の点のうち、(x_s, y_s), (x_s, y_t), (x_t, y_t), (x_t, y_s) の4頂点からなる長方形の内部に含まれている点の数を求めてください。
+なお、長方形の辺上にある点は長方形に含まれているものとします。
 
 ▼　下記解答欄にコードを記入してみよう
 

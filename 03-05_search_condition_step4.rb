@@ -20,13 +20,13 @@ def solve1(input_lines)
   ary = input_lines.shift(n).map { |l| l.split.map(&:to_i) }
   k = input_lines.shift.to_i
 
-  a = ary[n - 1]
+  ax, ay = ary[n - 1]
   result = 0
-  ary.each do |b|
-    dist = (a[0] - b[0]).abs + (a[1] - b[1]).abs
+  ary.each do |bx, by|
+    dist = (ax - bx).abs + (ay - by).abs
     result += 1 if dist <= k
   end
-  
+
   result
 end
 
@@ -40,8 +40,8 @@ def solve2(input_lines)
   ary = input_lines.shift(n).map { |l| l.split.map(&:to_i) }
   k = input_lines.shift.to_i
 
-  a = ary[n - 1]
-  ary.count { |b| (a[0] - b[0]).abs + (a[1] - b[1]).abs <= k }
+  ax, ay = ary[n - 1]
+  ary.count { |bx, by| (ax - bx).abs + (ay - by).abs <= k }
 end
 
 # puts solve2(STDIN.read)

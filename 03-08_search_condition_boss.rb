@@ -1,4 +1,4 @@
-# 成績優秀者の列挙 2 (paizaランク C 相当)
+# 【特殊な探索】成績優秀者の列挙 2 (paizaランク C 相当)
 # https://paiza.jp/works/mondai/sequence_search_problems/sequence_search_problems_search_condition_boss
 
 INPUT1 = <<~"EOS"
@@ -28,13 +28,13 @@ def solve(input_lines)
   ary.each do |name, score|
     result << name if k <= score && score <= l
   end
-  
+
   result
 end
 
 puts solve(INPUT1)
 
-def solve2(input_lines)
+def solve(input_lines)
   input_lines = input_lines.split("\n")
   n = input_lines.shift.to_i
   hash = input_lines.shift(n).map do |l|
@@ -47,8 +47,7 @@ def solve2(input_lines)
   hash.select { |name, score| k <= score && score <= l }.keys
 end
 
-# puts solve2(STDIN.read)
-puts solve2(INPUT1)
+puts solve(STDIN.read)
 
 =begin
 【特殊な探索】 成績優秀者の列挙 2 (paizaランク C 相当)
