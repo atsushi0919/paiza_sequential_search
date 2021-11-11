@@ -24,8 +24,9 @@ def solve(input_lines)
   ary[-k]
 end
 
-# puts solve(STDIN.read)
-puts solve(INPUT1)
+puts solve(STDIN.read)
+# puts solve(INPUT1)
+# > -3
 
 def solve1(input_lines)
   n, *ary, k = input_lines.split.map(&:to_i)

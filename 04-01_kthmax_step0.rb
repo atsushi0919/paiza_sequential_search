@@ -34,7 +34,7 @@ def solve2(input_lines)
 end
 
 puts solve2(STDIN.read)
-# puts solve2(INPUT1)
+# > puts solve2(INPUT1)
 # > 6
 
 def solve3(input_lines)
