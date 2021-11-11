@@ -23,7 +23,9 @@ def solve1(input_lines)
   ary[-2]
 end
 
-puts solve1(INPUT1)
+puts solve1(STDIN.read)
+# puts solve1(INPUT1)
+# > 6
 
 def solve2(input_lines)
   n, *ary = input_lines.split.map(&:to_i)
@@ -31,7 +33,9 @@ def solve2(input_lines)
   ary.sort[-2]
 end
 
-puts solve2(INPUT1)
+puts solve2(STDIN.read)
+# puts solve2(INPUT1)
+# > 6
 
 def solve3(input_lines)
   n, *ary = input_lines.split.map(&:to_i)
@@ -39,7 +43,9 @@ def solve3(input_lines)
   ary.max(2).last
 end
 
-puts solve3(INPUT1)
+puts solve3(STDIN.read)
+# puts solve3(INPUT1)
+# > 6
 
 =begin
 2番目に大きな値 (paizaランク C 相当)

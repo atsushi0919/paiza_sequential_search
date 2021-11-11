@@ -10,7 +10,7 @@ OUTPUT1 = <<~"EOS"
   -3
 EOS
 
-def solve1(input_lines)
+def solve(input_lines)
   n, *ary, k = input_lines.split.map(&:to_i)
 
   k.times do |i|
@@ -24,23 +24,28 @@ def solve1(input_lines)
   ary[-k]
 end
 
-p solve1(INPUT1)
+# puts solve(STDIN.read)
+puts solve(INPUT1)
 
-def solve2(input_lines)
+def solve1(input_lines)
   n, *ary, k = input_lines.split.map(&:to_i)
 
   ary.sort[-k]
 end
 
-puts solve2(INPUT1)
+puts solve1(STDIN.read)
+# puts solve1(INPUT1)
+# > -3
 
-def solve3(input_lines)
+def solve2(input_lines)
   n, *ary, k = input_lines.split.map(&:to_i)
 
   ary.max(k).last
 end
 
-puts solve3(INPUT1)
+puts solve2(STDIN.read)
+# puts solve2(INPUT1)
+# > -3
 
 =begin
 【第 k 要素の探索】k番目に大きな値 (paizaランク C 相当)
